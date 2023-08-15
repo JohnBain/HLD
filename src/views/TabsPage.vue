@@ -14,8 +14,8 @@
 </ion-tab-button>
 
         <ion-tab-button tab="tab3" href="/tabs/tab3">
-          <ion-icon aria-hidden="true" :icon="square" />
-          <ion-label>Community</ion-label>
+            <img :src="communitySvg">
+
         </ion-tab-button>
         <ion-tab-button tab="tab4" href="/tabs/tab3">
           <ion-icon aria-hidden="true" :icon="cash" />
@@ -32,5 +32,6 @@
 <script setup lang="ts">
 import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
 import { images, square, home, cash, menu } from 'ionicons/icons';
+import communitySvg from '/public/community.svg';
 
 </script>
