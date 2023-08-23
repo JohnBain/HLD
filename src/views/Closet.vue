@@ -1,19 +1,19 @@
 <template>
   <ion-page>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Photo Gallery</ion-title>
-      </ion-toolbar>
-    </ion-header>
     <ion-content>
       <ion-grid>
         <ion-row>
-          <ion-col size="6" v-for="photo in photos" :key="photo">
-            <ion-img :src="photo.webviewPath"></ion-img>
+          <ion-col size="10">
+          </ion-col>
+          <ion-col size="2">
+            <ion-list v-for="photo in photos" :key="photo">
+              <ion-item>
+                <ion-img class="responsive" :src="photo.webviewPath"></ion-img>
+              </ion-item>
+            </ion-list>
           </ion-col>
         </ion-row>
       </ion-grid>
-
       <ion-fab vertical="bottom" horizontal="center" slot="fixed">
         <ion-fab-button @click="takePhoto()">
           <ion-icon :icon="camera"></ion-icon>
@@ -37,6 +37,8 @@ import {
   IonRow,
   IonTitle,
   IonToolbar,
+  IonList,
+  IonItem
 } from '@ionic/vue';
 import { camera, trash, close } from 'ionicons/icons';
 import { usePhotoGallery, UserPhoto } from '@/composables/usePhotoGallery';
