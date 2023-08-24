@@ -3,7 +3,12 @@
     <ion-content>
       <ion-grid>
         <ion-row>
-          <ion-col size="10">
+          <ion-col size="10" class="closet">
+            <ion-list>
+              <ion-item>
+                <h1>hello world!</h1>
+              </ion-item>
+            </ion-list>
           </ion-col>
           <ion-col size="2">
             <ion-list v-for="photo in photos" :key="photo">
@@ -45,3 +50,9 @@ import { usePhotoGallery, UserPhoto } from '@/composables/usePhotoGallery';
 
 const { photos, takePhoto } = usePhotoGallery();
 </script>
+
+<style>
+.closet {
+  background-color: blue
+}
+</style>
