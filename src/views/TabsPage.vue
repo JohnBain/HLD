@@ -5,27 +5,27 @@
       <ion-tab-bar slot="top">
         <ion-tab-button tab="tab1" href="/tab1">
           <ion-icon :icon="HomeButton" />
-          <ion-label>Home</ion-label>
+          <ion-label class="navtext">Home</ion-label>
         </ion-tab-button>
         <ion-tab-button tab="tab2" href="/closet">
           <ion-icon :icon="ClosetButton" />
-          <ion-label>Closet</ion-label>
+          <ion-label class="navtext">Closet</ion-label>
         </ion-tab-button>
         <ion-tab-button tab="tab4" href="/tab3">
           <ion-icon aria-hidden="true" :icon="GoalsButton" />
-          <ion-label>Goals</ion-label>
+          <ion-label class="navtext">Goals</ion-label>
         </ion-tab-button>
         <ion-tab-button tab="tab4" href="/tab3">
           <ion-icon aria-hidden="true" :icon="CommunityButton" />
-          <ion-label>Community</ion-label>
+          <ion-label class="navtext">Community</ion-label>
         </ion-tab-button>
         <ion-tab-button tab="tab4" href="/tab3">
           <ion-icon aria-hidden="true" :icon="MarketButton" />
-          <ion-label>Market</ion-label>
+          <ion-label class="navtext">Market</ion-label>
         </ion-tab-button>
         <ion-tab-button tab="tab4" href="/tab3">
           <ion-icon aria-hidden="true" :icon="ProfileButton" />
-          <ion-label>Profile</ion-label>
+          <ion-label class="navtext">Profile</ion-label>
         </ion-tab-button>
       </ion-tab-bar>
     </ion-tabs>
@@ -81,29 +81,8 @@ import ProfileButton from "/main_buttons/profilebutton.svg"
 </script>
 
 <style>
-#navbar {
-  background-color: white;
-  width: 100%;
-  height: auto;
-  display: flex;
-  padding-top: 20px;
-}
-
-.navimages {
-  max-width: 4%;
-  height: auto;
-  flex: 33.3%;
-}
-
-#navtext {
-  font-family: 'Avenir', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.navtext {
+  font-family: 'Avenir', 'Franklin Gothic Medium', 'Arial', Arial, sans-serif;
   font-size: xx-small;
-  text-align: center;
-}
-
-.footerimage {
-  max-width: 6%;
-  height: auto;
-  padding: 10px;
 }
 </style>
