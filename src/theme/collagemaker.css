@@ -1,0 +1,111 @@
+#navbar, #footer{
+    background-color: black;
+    width: 100%;
+    height:auto;
+    display: flex;
+    padding-top: 20px;
+    
+}
+
+
+#back2home{
+    max-width: 1.3%;
+    height: 30px;
+    flex: 33.3%;
+    padding: 10px, 15px;
+    padding-top: 10px;
+    padding-right: 20px;
+    
+    margin-left: 10px;
+    
+}
+
+#save{
+    max-width: 9%;
+    height: 30px;
+    flex: 33.3%;
+    padding: 10px;
+    padding-right: 20px;
+    padding-top: 19px;
+    margin-left: 10px;
+    
+}
+
+.navimages{
+    max-width: 3%;
+    height: auto;
+    flex: 33.3%;
+    padding: 10px;
+    
+    
+}
+
+#picture{
+    background-color: white;
+    height: 600px;
+}
+
+.footerimages{
+    max-width: 3%;
+    height: auto;
+    flex: 33.3%;
+    padding: 8px;
+    
+    
+}
+#add2collage{
+    max-width: 3%;
+    height: auto;
+    flex: 33.3%;
+    padding: 10px;
+    padding-top: 3px;
+    padding-left: 15px;
+
+}
+
+#auto{
+    max-width: 2.5%;
+    height: auto;
+    flex: 33.3%;
+    padding: 10px;
+    padding-top: 3px;
+
+}
+
+#draw{
+    max-width: 2.5%;
+    height: auto;
+    flex: 33.3%;
+    padding: 10px;
+    padding-top: 3px;
+
+}
+
+#erase{
+    max-width: 3.5%;
+    height: auto;
+    flex: 33.3%;
+    padding: 10px;
+   padding-top: 8px;
+
+}
+#backgrounds{
+    max-width: 3%;
+    height: auto;
+    flex: 33.3%;
+    padding: 10px;
+   padding-top: 5px;
+
+}
+#stickers{
+    max-width: 2.7%;
+    height: auto;
+    flex: 33.3%;
+    padding: 10px;
+   padding-top: 0px;
+   
+
+}
+
+
+

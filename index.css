@@ -1,0 +1,31 @@
+
+
+#navbar{
+    background-color: white;
+    width: 100%;
+    height:auto;
+    display: flex;
+    padding-top: 20px;
+    
+}
+
+.navimages{
+    max-width: 4%;
+    height: auto;
+    flex: 33.3%;
+    
+    
+}
+
+#navtext{
+    font-family: 'Avenir','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: xx-small;
+    text-align: center;
+
+    }
+
+.footerimage{
+    max-width: 6%;
+    height: auto;
+    padding: 10px;
+}
