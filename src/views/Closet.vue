@@ -50,9 +50,3 @@ import { usePhotoGallery, UserPhoto } from '@/composables/usePhotoGallery';
 
 const { photos, takePhoto } = usePhotoGallery();
 </script>
-
-<style>
-.closet {
-  background-color: blue
-}
-</style>

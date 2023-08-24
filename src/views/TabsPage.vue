@@ -1,39 +1,109 @@
 <template>
   <ion-page>
-
     <ion-tabs>
       <ion-router-outlet></ion-router-outlet>
       <ion-tab-bar slot="top">
         <ion-tab-button tab="tab1" href="/tab1">
-          <ion-icon aria-hidden="true" :icon="home" />
+          <ion-icon :icon="HomeButton" />
           <ion-label>Home</ion-label>
         </ion-tab-button>
         <ion-tab-button tab="tab2" href="/closet">
-          <ion-icon :icon="images" />
+          <ion-icon :icon="ClosetButton" />
           <ion-label>Closet</ion-label>
         </ion-tab-button>
         <ion-tab-button tab="tab4" href="/tab3">
-          <ion-icon aria-hidden="true" :icon="cash" />
+          <ion-icon aria-hidden="true" :icon="GoalsButton" />
+          <ion-label>Goals</ion-label>
+        </ion-tab-button>
+        <ion-tab-button tab="tab4" href="/tab3">
+          <ion-icon aria-hidden="true" :icon="CommunityButton" />
+          <ion-label>Community</ion-label>
+        </ion-tab-button>
+        <ion-tab-button tab="tab4" href="/tab3">
+          <ion-icon aria-hidden="true" :icon="MarketButton" />
           <ion-label>Market</ion-label>
         </ion-tab-button>
         <ion-tab-button tab="tab4" href="/tab3">
-          <ion-icon aria-hidden="true" :icon="menu" />
+          <ion-icon aria-hidden="true" :icon="ProfileButton" />
+          <ion-label>Profile</ion-label>
         </ion-tab-button>
       </ion-tab-bar>
     </ion-tabs>
-
-  
-
   </ion-page>
 </template>
+<!-- <template>
+  <ion-page>
+    <nav>
+      <div id="navbar">
+        <div class="navimages"> <img src="homebutton.svg" alt="home">
+          <div id="navtext">
+            <h1>Home</h1></div>
+        </div>
+        <div class="navimages"><img src="closetbutton.svg" alt="closet">
+          <div id="navtext">
+            <h1>Closet</h1></div>
+        </div>
+        <div id="navimages"><img src="goalsbutton.svg" alt="goals">
+          <div id="navtext">
+            <h1>Goals</h1></div>
+        </div>
+        <div id="navimages"><img src="community.svg" alt="community">
+  <div id="navtext">
+    <h1>Community</h1></div>
+</div>
+ 
+        <div id="navimages"><img src="marketbutton.svg" alt="market">
+          <div id="navtext">
+            <h1>Market</h1></div>
+        </div>
+        <div id="navimages"><img src="profilebutton.svg" alt="profile">
+          <div id="navtext">
+            <h1>Profile</h1></div>
+        </div>
+      </div>
+    </nav>
+  </ion-page>
+</template>
+ -->
 
 <script setup lang="ts">
 import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
 import { images, square, home, cash, menu } from 'ionicons/icons';
-import communitySvg from '/public/community.svg';
+import HomeButton from "/main_buttons/homebutton.svg";
+import ClosetButton from "/main_buttons/closetbutton.svg"
+import GoalsButton from "/main_buttons/goalsbutton.svg"
+import CommunityButton from "/main_buttons/community.svg"
+import MarketButton from "/main_buttons/marketbutton.svg"
+import ProfileButton from "/main_buttons/profilebutton.svg"
 
+
+// import communitySvg from '/public/community.svg';
 </script>
 
+<style>
+#navbar {
+  background-color: white;
+  width: 100%;
+  height: auto;
+  display: flex;
+  padding-top: 20px;
+}
 
+.navimages {
+  max-width: 4%;
+  height: auto;
+  flex: 33.3%;
+}
 
+#navtext {
+  font-family: 'Avenir', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: xx-small;
+  text-align: center;
+}
 
+.footerimage {
+  max-width: 6%;
+  height: auto;
+  padding: 10px;
+}
+</style>
