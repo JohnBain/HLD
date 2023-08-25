@@ -9,8 +9,8 @@ const routes: Array<RouteRecordRaw> = [
     children: [
      
       {
-        path: 'tab1',
-        component: () => import('@/views/Tab1Page.vue')
+        path: 'collage_maker',
+        component: () => import('@/views/CollageMaker.vue')
       },
       {
         path: 'closet',

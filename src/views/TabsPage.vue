@@ -3,7 +3,7 @@
     <ion-tabs>
       <ion-router-outlet></ion-router-outlet>
       <ion-tab-bar slot="top">
-        <ion-tab-button tab="tab1" href="/tab1">
+        <ion-tab-button tab="tab1" href="/tab3">
           <ion-icon :icon="HomeButton" />
           <ion-label class="navtext">Home</ion-label>
         </ion-tab-button>
@@ -23,7 +23,7 @@
           <ion-icon aria-hidden="true" :icon="MarketButton" />
           <ion-label class="navtext">Market</ion-label>
         </ion-tab-button>
-        <ion-tab-button tab="tab4" href="/tab3">
+        <ion-tab-button tab="tab4" href="/collage_maker">
           <ion-icon aria-hidden="true" :icon="ProfileButton" />
           <ion-label class="navtext">Profile</ion-label>
         </ion-tab-button>
@@ -75,6 +75,7 @@ import GoalsButton from "/main_buttons/goalsbutton.svg"
 import CommunityButton from "/main_buttons/community.svg"
 import MarketButton from "/main_buttons/marketbutton.svg"
 import ProfileButton from "/main_buttons/profilebutton.svg"
+import '@/theme/foo.scss';
 
 
 // import communitySvg from '/public/community.svg';
