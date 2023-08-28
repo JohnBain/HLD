@@ -5,8 +5,6 @@ http://ionicframework.com/docs/theming/ */
 :root {
 
   /*Custom CSS*/
-  --ion-background-color: #F5F5DC; /*no idea why its not respecting this*/
-
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;
   --ion-color-primary-contrast: #ffffff;

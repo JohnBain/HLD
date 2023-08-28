@@ -2,7 +2,7 @@
   <ion-page>
     <ion-tabs>
       <ion-router-outlet></ion-router-outlet>
-      <ion-tab-bar slot="top">
+      <ion-tab-bar slot="top" class="mybar">
         <ion-tab-button tab="tab1" href="/tab3">
           <ion-icon :icon="HomeButton" />
           <ion-label class="navtext">Home</ion-label>
@@ -75,7 +75,7 @@ import GoalsButton from "/main_buttons/goalsbutton.svg"
 import CommunityButton from "/main_buttons/community.svg"
 import MarketButton from "/main_buttons/marketbutton.svg"
 import ProfileButton from "/main_buttons/profilebutton.svg"
-import '@/theme/foo.scss';
+import '@/theme/navigationbar.scss';
 
 
 // import communitySvg from '/public/community.svg';

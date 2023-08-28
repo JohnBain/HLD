@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
-import TabsPage from '../views/TabsPage.vue'
+import NavigationBar from '../views/NavigationBar.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    component: TabsPage,
+    component: NavigationBar,
     children: [
      
       {
@@ -17,8 +17,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/Closet.vue')
       },
       {
-        path: 'tab3',
-        component: () => import('@/views/Tab3Page.vue')
+        path: 'home',
+        component: () => import('@/views/Home.vue')
       }
     ]
   }
