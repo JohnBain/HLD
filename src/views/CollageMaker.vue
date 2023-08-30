@@ -33,7 +33,7 @@
     <ion-footer>
       <ion-tab-bar slot="bottom" class="collageBottom">
         <ion-tab-button>
-          <ion-icon aria-hidden="true" :icon="CMBot_Add" alt="add to collage" />
+          <ion-icon aria-hidden="true" :icon="CMBot_Add" alt="add to collage" selected="false" />
         </ion-tab-button>
         <ion-tab-button>
           <ion-icon aria-hidden="true" :icon="CMBot_BGRemove" alt="auto" />
@@ -41,10 +41,6 @@
         <ion-tab-button>
           <ion-icon aria-hidden="true" :icon="CMBot_Adjust" alt="adjust" />
         </ion-tab-button>
-        <!-- <ion-tab-button>
-  <ion-icon aria-hidden="true" :icon="CMBot_Filters" alt="filters" />
-</ion-tab-button>
- -->
         <ion-tab-button>
           <ion-icon aria-hidden="true" :icon="CMBot_Draw" alt="draw" />
         </ion-tab-button>
@@ -61,6 +57,27 @@
     </ion-footer>
   </ion-page>
 </template>
+<!--
+  <div id="footer">
+      <div id="add2collage"><img src="users/amy/HLD/public/addbuttoncollagemaker.svg" alt="add to collage"></div>
+      <div id="auto"><img src="users/amy/HLD/public/autobackgroundremovebuttoncollagemaker.svg" alt="auto"></div>
+      <div class="footerimages"><img src="users/amy/HLD/public/adjustbuttoncollagemaker.svg" alt="adjust"></div>
+      <div class="footerimages"><img src="users/amy/HLD/public/filtersbuttoncollagemaker.svg" alt="filters"></div>
+      <div id="draw"><img src="users/amy/HLD/public/drawbuttoncollagemaker.svg" alt="draw"></div>
+      <div id="erase"><img src="users/amy/HLD/public/erasebuttoncollagemaker.svg" alt="erase"></div>
+      <div id="backgrounds"><img src="users/amy/HLD/public/addbackgroundbuttoncollagemaker.svg" alt="backgrounds"></div>
+      <div id="stickers"><img src="users/amy/HLD/public/stickerbuttoncollagemaker.svg" alt="stickers"></div>
+
+import CMBot_Add from "/collage_bottom/addbuttoncollagemaker.svg"
+import CMBot_BGRemove from "/collage_bottom/autobackgroundremovebuttoncollagemaker.svg"
+import CMBot_Adjust from "/collage_bottom/adjustbuttoncollagemaker.svg"
+import CMBot_Filters from "/collage_bottom/filtersbuttoncollagemaker.svg"
+import CMBot_Draw from "/collage_bottom/drawbuttoncollagemaker.svg"
+import CMBot_Erase from "/collage_bottom/erasebuttoncollagemaker.svg"
+import CMBot_BGAdd from "/collage_bottom/addbackgroundbuttoncollagemaker.svg"
+import CMBot_Sticker from "/collage_bottom/stickerbuttoncollagemaker.svg"
+
+    </div>-->
 
 <script setup lang="ts">
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';

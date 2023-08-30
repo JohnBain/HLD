@@ -3,7 +3,7 @@
     <ion-tabs>
       <ion-router-outlet></ion-router-outlet>
       <ion-tab-bar slot="top" class="mybar">
-        <ion-tab-button tab="tab1" href="/tab3">
+        <ion-tab-button tab="tab1" href="/home">
           <ion-icon :icon="HomeButton" />
           <ion-label class="navtext">Home</ion-label>
         </ion-tab-button>
@@ -11,23 +11,25 @@
           <ion-icon :icon="ClosetButton" />
           <ion-label class="navtext">Closet</ion-label>
         </ion-tab-button>
-        <ion-tab-button tab="tab4" href="/tab3">
+        <ion-tab-button tab="tab3" href="/tab3">
           <ion-icon aria-hidden="true" :icon="GoalsButton" />
           <ion-label class="navtext">Goals</ion-label>
         </ion-tab-button>
-        <ion-tab-button tab="tab4" href="/tab3">
+        <ion-tab-button tab="community" href="/community">
           <ion-icon aria-hidden="true" :icon="CommunityButton" />
           <ion-label class="navtext">Community</ion-label>
         </ion-tab-button>
-        <ion-tab-button tab="tab4" href="/tab3">
+        <ion-tab-button tab="tab3" href="/tab3">
           <ion-icon aria-hidden="true" :icon="MarketButton" />
           <ion-label class="navtext">Market</ion-label>
         </ion-tab-button>
-        <ion-tab-button tab="tab4" href="/collage_maker">
+        <ion-tab-button tab="collage_maker" href="/collage_maker">
           <ion-icon aria-hidden="true" :icon="ProfileButton" />
           <ion-label class="navtext">Profile</ion-label>
         </ion-tab-button>
       </ion-tab-bar>
+      <ion-footer>hello world
+      </ion-footer>
     </ion-tabs>
   </ion-page>
 </template>
@@ -67,7 +69,7 @@
  -->
 
 <script setup lang="ts">
-import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
+import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet, IonFooter } from '@ionic/vue';
 import { images, square, home, cash, menu } from 'ionicons/icons';
 import HomeButton from "/main_buttons/homebutton.svg";
 import ClosetButton from "/main_buttons/closetbutton.svg"
