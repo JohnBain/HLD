@@ -5,7 +5,7 @@
     </ion-content>
     <ion-footer>
       <div class="ion-text-center">
-        <h1>CameraButton</h1>
+        <h1>CameraButton </h1>
       </div>
     </ion-footer>
   </ion-page>
