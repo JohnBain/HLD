@@ -47,7 +47,7 @@ export default {
     if (this.shouldUpdateWeather()) {
       getWeather();
     } else {
-      this.qualitativeWeather = localStorageWeather;
+      this.qualitativeWeather = localStorage.getItem("qualitativeWeather");
     }
 
   }
