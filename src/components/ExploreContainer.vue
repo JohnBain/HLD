@@ -5,10 +5,18 @@
   </div>
 </template>
 
-<script setup lang="ts">
-defineProps({
-  name: "String",
-});
+<script>
+import { ref } from 'vue'
+
+export default {
+  setup() {
+    const name = ref('Joe')
+
+    return {
+      name
+    }
+  }
+}
 </script>
 
 <style scoped>

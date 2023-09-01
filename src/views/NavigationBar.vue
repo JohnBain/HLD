@@ -28,7 +28,7 @@
           <ion-label class="navtext">Profile</ion-label>
         </ion-tab-button>
       </ion-tab-bar>
-      <ion-footer>hello world
+      <ion-footer>
       </ion-footer>
     </ion-tabs>
   </ion-page>

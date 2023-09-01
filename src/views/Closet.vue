@@ -6,7 +6,7 @@
           <ion-col size="10" class="closet">
             <ion-list>
               <ion-item>
-                <h1>hello world!</h1>
+                <h1>!</h1>
               </ion-item>
             </ion-list>
           </ion-col>

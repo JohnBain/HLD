@@ -1,17 +1,20 @@
 <template>
   <div id="container">
-    <Weather name="Good morning" />
   </div>
 </template>
 
-<script setup lang="ts">
-defineProps({
-  name: "String",
-});
-import Weather from '@/components/Home/Weather.vue';
+<script>
 </script>
 
 <style scoped>
+.clicked {
+  color: blue;
+}
+
+.hovered {
+  background-color: grey;
+}
+
 #container {
   text-align: center;
   position: absolute;

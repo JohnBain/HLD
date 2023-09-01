@@ -5,7 +5,6 @@
   <ion-title>Tab 3</ion-title>
 </ion-toolbar>
  -->
-      <div class="weather">weather!</div>
     </ion-header>
     <ion-content :fullscreen="true">
       <ion-header collapse="condense">
@@ -13,19 +12,14 @@
           <ion-title size="large">Tab 3</ion-title>
         </ion-toolbar>
       </ion-header>
-      <HomeContainer name="Good morning!" />
+      <Weather/>
       <div>
       </div>
-      <div class="myfoot">foo</div>
     </ion-content>
   </ion-page>
 </template>
 
 <style>
-.myfoot {
-  position: absolute;
-  bottom: 0px;
-}
 </style>
 
 <script setup lang="ts">
@@ -42,5 +36,5 @@ import { IonFooter } from '@ionic/vue';
 import { add } from 'ionicons/icons';
 import ClosetButton from "/main_buttons/closetbutton.svg"
 
-import HomeContainer from '@/components/HomeContainer.vue';
+import Weather from '@/components/Home/Weather.vue'
 </script>

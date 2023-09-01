@@ -1,36 +1,61 @@
 <template>
   <div id="container">
-    <!-- <strong>{{ getWeather() }}</strong> -->
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-    <p v-if="isLoading">Still loading</p>
-    <p v-if="isLoaded">Is not loading anymore</p>
+    <strong>{{ qualitativeWeather }}</strong>
   </div>
 </template>
 
-<script setup lang="ts">
-import { onMounted } from 'vue';
-import axios, { isCancel, AxiosError } from 'axios';
+<script>
+export default {
+  data() {
+    return {
+      error: false,
+      qualitativeWeather: ""
+    }
+  },
+  methods: {
+    async getWeather() {
+      try {
+        let lat = "40.8259"
+        let long = "-74.2011"
+        let res = await fetch(`https://api.weather.gov/points/${lat},${long}`)
+        let weatherUrl = (await res.json()).properties.forecast;
+        console.log(weatherUrl)
 
-defineProps({
-  name: "String",
-  isLoading: true
-});
+        let res2 = await fetch(weatherUrl)
+        this.qualitativeWeather = (await res2.json()).properties.periods[0].detailedForecast;
+        localStorage.setItem("lastWeatherCheck", new Date.getTime());
+        localStorage.setItem("qualitativeWeather", this.qualitativeWeather);
+      } catch (error) {
+        this.error = true //'Error! Could not reach the API. ' + error
+      }
+    },
+    shouldUpdateWeather() {
+      const TIME_ELAPSED = 30; //minutes
+      let lastCheck = localStorage.getItem("lastWeatherCheck");
+      let date = new Date();
+      if (Math.abs(((date.getTime() - lastCheck) / 1000) / 60) > TIME_ELAPSED) {
+        console.log("more than " + TIME_ELAPSED + " minutes elapsed; lets update weather")
+        return true;
+      } else {
+        return false;
+      }
 
-onMounted(() => {
-  console.log(`the component is now mounted.`)
-  doStuff().then(function(e) {
 
-    return e;
-  });
-})
+    }
+  },
+  mounted: function() {
+    if (this.shouldUpdateWeather()) {
+      getWeather();
+    } else {
+      this.qualitativeWeather = localStorageWeather;
+    }
 
-async function doStuff() {
-  let lat: string = "40.8259"
-  let long: string = "-74.2011"
-  return 'foo'
-    // return axios.get(`https://api.weather.gov/points/${lat},${long}`)
+  }
 
 }
+
+/*
+ https://api.weather.gov/points/40.8259,-74.2011*/
 </script>
 
 <style scoped>

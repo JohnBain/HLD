@@ -23,6 +23,10 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: 'community',
         component: () => import('@/views/Community.vue')
+      },
+      {
+        path: 'scrap_paper',
+        component: () => import('@/views/JohnsScrapPaper.vue')
       }
     ]
   }
