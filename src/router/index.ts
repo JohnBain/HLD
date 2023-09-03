@@ -26,9 +26,9 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: 'scrap_paper',
-        component: () => import('@/views/JohnsScrapPaper.vue')
-      }
-    ]
+        component: () => import('@/views/scrap/JohnsScrapPaper.vue')
+      },
+          ]
   }
 ]
 

@@ -14,22 +14,7 @@ export interface UserPhoto {
 
 	const photos = ref<UserPhoto[]>([]);
 
-const sendToTransform = async (file) => {
-  console.log("in sendToTransform")
-  let formData = new FormData();
-  formData.append('file', file, file.name);
 
-  axios.post('http://localhost:97/transform', {
-    'data': file
-  }, {
-    headers: {
-      'Content-Type': 'multipart/form-data'
-    }
-  }
-).then(function(response){
-  console.log(response)
-})
-}
 
 const cachePhotos = () => {
   Preferences.set({
@@ -52,7 +37,6 @@ const loadSaved = async () => {
     console.log('printing files:')
     const byteVersion = atob(photo.webviewPath.split(",")[1]);
     const blob = new Blob([byteVersion], { type: 'image/png' });
-    sendToTransform(blob)
     break;
   }
 
@@ -91,12 +75,7 @@ const convertBlobToBase64 = (blob: Blob) =>
   };
 };
 export const usePhotoGallery = () => {
-  axios.get('http://localhost:97/sayhello').then(function(r){
-    console.log(r)
-  }).catch(function(e){
-    console.log(e)
-  })
-	const takePhoto = async () => {
+ 	const takePhoto = async () => {
 		const photo = await Camera.getPhoto({
 			resultType: CameraResultType.Uri,
 			source: CameraSource.Camera,
