@@ -11,10 +11,17 @@
       <input v-model="question" />
     </p>
     <p>{{ answer }}</p>
+    <br/>
+    <p>
+      Watcher practice:
+      <input v-model="watch_model" />
+      <p> {{watch_button}}</p>
+    </p>
   </div>
 </template>
 
 <script>
+import { debounce } from 'lodash';
 export default {
   data() {
     return {
@@ -24,12 +31,17 @@ export default {
       johnText: "foobar",
       question: "question",
       answer: "answer",
+      watch_model: "",
+      watch_button: "hello world"
     }
   },
   watch: {
     question(newQuestion, oldQuestion) {
       this.getAnswer()
-    }
+    },
+    watch_model: debounce((function() {
+      this.watch_button = `hello world ${this.watch_model}`
+    }), 250),
   },
   methods: {
     doHover() {

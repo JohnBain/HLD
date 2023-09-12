@@ -19,13 +19,19 @@ export default {
       try {
         let res = await fetch(`https://api.weather.gov/points/${lat},${long}`)
         let weatherUrl = (await res.json()).properties.forecast;
+        console.log('here is weather url:')
         console.log(weatherUrl)
 
         let res2 = await fetch(weatherUrl)
         console.log(weatherUrl) //https://api.weather.gov/gridpoints/OKX/26,39/forecast
         this.qualitativeWeather = (await res2.json()).properties.periods[0].detailedForecast;
-        localStorage.setItem("lastWeatherCheck", new Date.getTime());
+       
+
+        var curr_date = new Date();
+        localStorage.setItem("lastWeatherCheck", curr_date.getTime());
         localStorage.setItem("qualitativeWeather", this.qualitativeWeather);
+        const items = { ...window.localStorage };
+        console.log(items)
       } catch (error) {
         this.error = true //'Error! Could not reach the API. ' + error
       }
@@ -34,11 +40,12 @@ export default {
       const TIME_ELAPSED = 30 //minutes
 
       let convertMillisToMinutes = (mill) => (Math.floor((mill / 1000) / 60) % 60)
-      let lastCheck = convertMillisToMinutes(localStorage.getItem("lastWeatherCheck"));
-      let currTime = convertMillisToMinutes(new Date().getTime())
-      console.log("time since last check: " + (currTime - lastCheck))
+      console.log(localStorage.getItem("lastWeatherCheck") + ' localStorage.getItem("lastWeatherCheck")?')
+      let lastCheck = localStorage.getItem("lastWeatherCheck");
+      let currTime = new Date().getTime()
+      console.log("time since last check: " + convertMillisToMinutes((currTime - lastCheck)))
 
-      if ((currTime - lastCheck) > 30) {
+      if (convertMillisToMinutes(currTime - lastCheck) > 30) {
         console.log('over 30; updating')
         return true;
       } else {
@@ -60,13 +67,16 @@ export default {
   mounted: async function() {
     let geolocation = (await this.checkGeoLocation());
     if (geolocation) {
-      var lat = position.coords.latitude;
-      var long = position.coords.longitude;
+      console.log(geolocation)
+      var lat = parseFloat(geolocation.coords.latitude).toFixed(4);
+      var long = parseFloat(geolocation.coords.longitude).toFixed(4);
+      console.log(lat)
+      console.log(long)
     } else {
       var lat = "40.8259"
       var long = "-74.2011"
     }
-    if (true) {
+    if (this.shouldUpdateWeather()) {
       this.getWeather(lat, long);
     } else {
       this.qualitativeWeather = localStorage.getItem("qualitativeWeather");
