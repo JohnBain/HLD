@@ -28,11 +28,7 @@
           <ion-title size="large">Tab 1</ion-title>
         </ion-toolbar>
       </ion-header>
-      <v-stage :config="configKonva">
-        <v-layer>
-          <v-circle :config="configCircle"></v-circle>
-        </v-layer>
-      </v-stage>
+      <h1>Content</h1>
     </ion-content>
     <ion-footer>
       <ion-tab-bar slot="bottom" class="collageBottom">
@@ -83,10 +79,8 @@ import CMBot_Sticker from "/collage_bottom/stickerbuttoncollagemaker.svg"
 
     </div>-->
 
-<script>
+<script setup lang="ts">
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
-import { defineComponent } from 'vue';
-
 
 import CMTop_BackToHome from "/collage_top/backtopagebuttoncollagemaker.svg"
 import CMTop_Back from "/collage_top/backbuttoniconcollagemaker.svg"
@@ -98,37 +92,11 @@ import CMTop_Save from "/collage_top/savebuttoncollagemaker.svg"
 import CMBot_Add from "/collage_bottom/addbuttoncollagemaker.svg"
 import CMBot_BGRemove from "/collage_bottom/autobackgroundremovebuttoncollagemaker.svg"
 import CMBot_Adjust from "/collage_bottom/adjustbuttoncollagemaker.svg"
+import CMBot_Filters from "/collage_bottom/filtersbuttoncollagemaker.svg"
 import CMBot_Draw from "/collage_bottom/drawbuttoncollagemaker.svg"
 import CMBot_Erase from "/collage_bottom/erasebuttoncollagemaker.svg"
 import CMBot_BGAdd from "/collage_bottom/addbackgroundbuttoncollagemaker.svg"
 import CMBot_Sticker from "/collage_bottom/stickerbuttoncollagemaker.svg"
-export default defineComponent({
-  data() {
-    return {
-      message: 'Hello!',
-      configKonva: {
-        width: 200,
-        height: 200
-      },
-      configCircle: {
-        x: 100,
-        y: 100,
-        radius: 70,
-        fill: "red",
-        stroke: "black",
-        strokeWidth: 4
-      },
-    }
-  },
-  components: {
-    IonPage,IonHeader,IonToolbar,IonTitle,IonContent
-  },
-  setup() {
-    return { CMTop_BackToHome, CMTop_Back, CMTop_Forward, CMTop_Export, CMTop_Download, CMTop_Save,
-      CMBot_Add,CMBot_BGRemove,CMBot_Adjust,CMBot_Draw,CMBot_Erase,CMBot_BGAdd,CMBot_Sticker}
-  }
-})
-
 </script>
 
 <style>
@@ -167,7 +135,17 @@ export default defineComponent({
     <link rel="stylesheet" href="collagemaker.css">
     
   </head>
-  
+  <nav>
+    <div id="navbar">
+       <div id="back2home"> <img src="users/amy/HLD/public/backtopagebuttoncollagemaker.svg" alt="back to home"></div>
+        <div class="navimages"><img src="users/amy/HLD/public/backbuttoniconcollagemaker.svg" alt="undo"></div>
+        <div class="navimages"><img src="users/amy/HLD/public/forwardbuttoniconcollagemaker.svg" alt="redo"></div>
+        <div class="navimages"><img src="users/amy/HLD/public/exportbuttoncollagemaker.svg" alt="export"></div>
+        <div class="navimages"><img src="users/amy/HLD/public/downloadiconcollagemaker.svg" alt="download"></div>
+        <div id="save"><img src="users/amy/HLD/public/savebuttoncollagemaker.svg" alt="Save go to closet"></div>
+</div>
+    
+  </nav>
 
   <body>
     <div id="app"></div>
