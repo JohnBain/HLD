@@ -30,7 +30,20 @@
       </ion-header>
       <v-stage :config="configKonva">
         <v-layer>
+          <v-text :config="{text: 'Some text on canvas', fontSize: 15}"/>
+          <v-rect :config="{
+            x: 20,
+            y: 50,
+            width: 100,
+            height: 100,
+            fill: 'red',
+            shadowBlur: 10,
+            draggable: true,
+          }"
+        />
           <v-circle :config="configCircle"></v-circle>
+          <v-line :config="rightBorderConfig"/>
+          <v-image :config="imageConfig"/>
         </v-layer>
       </v-stage>
     </ion-content>
@@ -105,19 +118,35 @@ import CMBot_Sticker from "/collage_bottom/stickerbuttoncollagemaker.svg"
 export default defineComponent({
   data() {
     return {
+      imageObj: new Image(),
       message: 'Hello!',
       configKonva: {
-        width: 200,
-        height: 200
+        width: window.innerWidth,
+        height: window.innerHeight * .8,
       },
       configCircle: {
-        x: 100,
+        x: 300,
         y: 100,
         radius: 70,
         fill: "red",
         stroke: "black",
-        strokeWidth: 4
+        strokeWidth: 4,
+        draggable: true,
       },
+      rightBorderConfig: {
+        points: [window.innerWidth * .8, 0, 0, window.innerHeight * 100],
+        stroke: 'black',
+        strokeWidth: 15,
+        lineCap: 'round',
+        lineJoin: 'round',
+      },
+      imageConfig: {
+    x: 200,
+    y: 50,
+    image: this.imageObj,
+    width: 100,
+    height: 100
+  }
     }
   },
   components: {
