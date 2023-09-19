@@ -42,15 +42,17 @@
           }"
         />
           <v-circle :config="configCircle"></v-circle>
-          <v-line :config="rightBorderConfig"/>
-          <v-image :config="imageConfig"/>
+          <v-image v-for="(item,index) in this.photos" :config="{
+            image: item,
+            draggable: true
+          }"/>
         </v-layer>
       </v-stage>
     </ion-content>
     <ion-footer>
       <ion-tab-bar slot="bottom" class="collageBottom">
         <ion-tab-button>
-          <ion-icon aria-hidden="true" :icon="CMBot_Add" alt="add to collage" selected="false" />
+          <ion-icon aria-hidden="true" :icon="CMBot_Add" alt="add to collage" selected="false" @click="addPhoto" />
         </ion-tab-button>
         <ion-tab-button>
           <ion-icon aria-hidden="true" :icon="CMBot_BGRemove" alt="auto" />
@@ -116,10 +118,22 @@ import CMBot_Erase from "/collage_bottom/erasebuttoncollagemaker.svg"
 import CMBot_BGAdd from "/collage_bottom/addbackgroundbuttoncollagemaker.svg"
 import CMBot_Sticker from "/collage_bottom/stickerbuttoncollagemaker.svg"
 export default defineComponent({
+  
+  created() {
+    // var that = this;
+    // this.photos.forEach(function(e){
+    //   console.log('hello world')
+    //   that.createImage(e)
+    // })
+    this.createImage("TEST_IMAGES/guy_shirt.png")
+    this.photos.forEach((e)=>this.createImage(e));
+  },
   data() {
     return {
-      imageObj: new Image(),
-      message: 'Hello!',
+      image: null,
+      count: 0,
+      fullPhotos: ["TEST_IMAGES/guy_shirt.png","TEST_IMAGES/guy_pants.png","TEST_IMAGES/guy_shirt2.png",],
+      photos: ["TEST_IMAGES/guy_shirt.png","TEST_IMAGES/guy_pants.png","TEST_IMAGES/guy_shirt2.png",],
       configKonva: {
         width: window.innerWidth,
         height: window.innerHeight * .8,
@@ -133,13 +147,6 @@ export default defineComponent({
         strokeWidth: 4,
         draggable: true,
       },
-      rightBorderConfig: {
-        points: [window.innerWidth * .8, 0, 0, window.innerHeight * 100],
-        stroke: 'black',
-        strokeWidth: 15,
-        lineCap: 'round',
-        lineJoin: 'round',
-      },
       imageConfig: {
     x: 200,
     y: 50,
@@ -149,6 +156,20 @@ export default defineComponent({
   }
     }
   },
+  methods: {
+    addPhoto(){
+
+    },
+    createImage(src){
+      const image = new window.Image();
+      image.src = src;
+      image.onload = () => {
+        // set image only when it is loaded
+        this.image = image;
+      };
+    }
+  },
+
   components: {
     IonPage,IonHeader,IonToolbar,IonTitle,IonContent
   },
